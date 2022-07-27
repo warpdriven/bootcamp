@@ -70,7 +70,7 @@ services:
       MILVUS_HOST: '172.16.238.10'
       MYSQL_HOST: '172.16.238.11'
     volumes:
-      - ./data:/data
+      - /data_lake/img_server:/data
     restart: always
     depends_on:
       - standalone
