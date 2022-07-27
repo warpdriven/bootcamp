@@ -13,6 +13,8 @@ class MySQLHelper():
         ...
     """
     def __init__(self):
+        LOGGER.info(f"host={MYSQL_HOST}, user={MYSQL_USER}, "
+                    f"port={MYSQL_PORT}, password={MYSQL_PWD}, database= {MYSQL_DB}")
         self.conn = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, port=MYSQL_PORT, password=MYSQL_PWD,
                                     database=MYSQL_DB,
                                     local_infile=True)
