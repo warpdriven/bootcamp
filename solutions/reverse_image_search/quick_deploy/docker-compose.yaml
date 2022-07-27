@@ -68,7 +68,7 @@ services:
         ipv4_address: 172.16.238.12
     environment:
       MILVUS_HOST: '172.16.238.10'
-#      MYSQL_HOST: '172.16.238.11'
+      MYSQL_HOST: '172.16.238.11'
     volumes:
       - /data_lake/img_server:/data
     restart: always
