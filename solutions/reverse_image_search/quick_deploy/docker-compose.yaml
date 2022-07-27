@@ -69,6 +69,10 @@ services:
     environment:
       MILVUS_HOST: '172.16.238.10'
       MYSQL_HOST: '172.16.238.11'
+      MYSQL_PORT: '3306'
+      MYSQL_USER: "root"
+      MYSQL_PWD: "123456"
+      MYSQL_DB: "mysql"
     volumes:
       - /data_lake/img_server:/data
     restart: always
