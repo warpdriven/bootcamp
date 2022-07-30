@@ -12,9 +12,10 @@ class MySQLHelper():
         args_0 (`type`):
         ...
     """
+
     def __init__(self):
         LOGGER.info(f"host={MYSQL_HOST}, user={MYSQL_USER}, "
-                    f"port={MYSQL_PORT}, password={MYSQL_PWD}, database= {MYSQL_DB}")
+                    f"port={MYSQL_PORT}, password={MYSQL_PWD}, database={MYSQL_DB}")
         self.conn = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, port=MYSQL_PORT, password=MYSQL_PWD,
                                     database=MYSQL_DB,
                                     local_infile=True)
@@ -25,7 +26,7 @@ class MySQLHelper():
             self.conn.ping()
         except Exception:
             self.conn = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, port=MYSQL_PORT, password=MYSQL_PWD,
-                                    database=MYSQL_DB,local_infile=True)
+                                        database=MYSQL_DB, local_infile=True)
             self.cursor = self.conn.cursor()
 
     def create_mysql_table(self, table_name):
