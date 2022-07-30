@@ -1,5 +1,5 @@
 # => Build container
-FROM node:alpine as builder
+FROM node:16-buster as builder
 WORKDIR /app
 COPY package.json .
 RUN yarn

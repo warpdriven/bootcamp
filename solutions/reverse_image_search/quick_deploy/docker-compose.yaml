@@ -85,13 +85,13 @@ services:
 
   webclient:
     container_name: img-search-webclient
-#    image: milvusbootcamp/img-search-client:1.0
-    build: client
+    image: milvusbootcamp/img-search-client:1.0
+#    build: client
     networks:
       app_net:
         ipv4_address: 172.16.238.13
     environment:
-      API_URL: 'http://127.0.0.1:5000'
+      API_URL: 'http://127.0.0.1:5100'
     ports:
       - "8001:80"
     healthcheck:
