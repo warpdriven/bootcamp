@@ -1,4 +1,4 @@
-FROM python:3.7-slim-buster
+FROM python:3.7-buster
 
 RUN pip3 install --upgrade pip
 RUN apt-get update

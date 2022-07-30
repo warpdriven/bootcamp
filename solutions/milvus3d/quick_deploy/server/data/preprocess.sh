@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../data
+cd ./data
 
 IF_BATCH=$1
 FILE_NAME=$2

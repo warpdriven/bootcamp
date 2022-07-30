@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b55af74-d284-437d-9eac-9e0982228874" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/object_detection/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/object_detection/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object_detection/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/object_detection/server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object_detection/server/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/object_detection/server/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object_detection/server/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/object_detection/server/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object_detection/server/src/milvus_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/object_detection/server/src/milvus_helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object_detection/server/src/operations/count.py" beforeDir="false" afterPath="$PROJECT_DIR$/object_detection/server/src/operations/count.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object_detection/server/src/operations/drop.py" beforeDir="false" afterPath="$PROJECT_DIR$/object_detection/server/src/operations/drop.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/object_detection/server/tmp/cache.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/quick_deploy/QUICK_START.md" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/QUICK_START.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quick_deploy/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quick_deploy/client/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/client/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../milvus3d/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../milvus3d/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../milvus3d/quick_deploy/server/data/preprocess.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../milvus3d/quick_deploy/server/data/preprocess.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_build_image_search_engine.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/1_build_image_search_engine.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quick_deploy/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/docker-compose.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quick_deploy/server/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/server/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quick_deploy/server/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/server/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quick_deploy/server/src/milvus_helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/server/src/milvus_helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quick_deploy/server/src/operations/count.py" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/server/src/operations/count.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quick_deploy/server/src/operations/drop.py" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/server/src/operations/drop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quick_deploy/server/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/quick_deploy/server/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,22 +44,27 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1tR2eBBlwOdPSnCMFii6yFtg5uA" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/cubean/git/ai/bootcamp/solutions/reverse_image_search"
+  }
+}]]></component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="image_similarity_search" />
+      <module name="reverse_image_search" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -90,7 +86,7 @@
       <method v="2" />
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="image_similarity_search" />
+      <module name="reverse_image_search" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -133,11 +129,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.main (1)" />
+      <item itemvalue="Python.mysql_helpers" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.mysql_helpers" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -175,12 +176,12 @@
           <line>47</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/quick_deploy/server/src/operations/count.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/image_similarity_search$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1623927796941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/object_detection/server/src" />
-    <SUITE FILE_PATH="coverage/image_similarity_search$main.coverage" NAME="main Coverage Results" MODIFIED="1623834855976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quick_deploy/server/src" />
-    <SUITE FILE_PATH="coverage/image_similarity_search$mysql_helpers.coverage" NAME="mysql_helpers Coverage Results" MODIFIED="1623923493459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/quick_deploy/server/src" />
   </component>
 </project>

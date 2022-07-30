@@ -9,12 +9,12 @@ docker run -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
 ```
 Install the dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r quick_deploy/server/requirements.txt
 ```
 Download & decompress the ModelNet40 dataset and weights of the deep learning model.
 ```bash
-chmod +x download_data.sh
-./download_data.sh
+chmod +x quick_deploy/server/data/download_data.sh
+./quick_deploy/server/data/download_data.sh
 ```
 Create two directories to store the pre-processed data for load and search respectively.
 ```bash
@@ -24,8 +24,8 @@ mkdir load_features
 Batch pre-process the data. Takes ~1.5 hrs with ModelNet40 (**You can skip this by downloading the pre-processed data directly, 
 see next step**). This operation will first compress the 3d models to 1024 faces and then do certain pre-processing steps. load_features directory will be populated.
 ```bash
-chmod +x preprocess.sh
-./preprocess.sh true
+chmod +x quick_deploy/server/data/preprocess.sh
+./quick_deploy/server/data/preprocess.sh true
 ```
 **Only do this if you skipped the last step!!** Download the pre-processed data from Google Drive.
 ```bash
