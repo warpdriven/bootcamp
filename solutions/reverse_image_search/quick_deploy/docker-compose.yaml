@@ -97,7 +97,7 @@ services:
       app_net:
         ipv4_address: 172.16.238.13
     environment:
-      API_URL: 'http://172.16.238.12:5100'
+      API_URL: 'http://172.16.238.12:5000'
     ports:
       - "8001:80"
     healthcheck:
