@@ -1,6 +1,5 @@
-import sys
 import os
-import traceback
+import sys
 
 from diskcache import Cache
 
@@ -32,18 +31,21 @@ def extract_features(img_dir, model):
             LOGGER.info(f"Extracting feature from image No. {i + 1} , {total} images in total")
             try:
                 norm_feat = model.resnet50_extract_feat(img_path)
-                LOGGER.info(f"Got image feature from image No. {i + 1}")
-                feats.append(norm_feat)
-                names.append(img_path.encode())
-                cache['current'] = i + 1
-                LOGGER.info(f"Extracted feature from image No. {i + 1}")
-            except Exception:
-                traceback.print_stack()
+                if norm_feat:
+                    LOGGER.info(f"Got image feature from image No. {i + 1}")
+                    feats.append(norm_feat)
+                    names.append(img_path.encode())
+                    cache['current'] = i + 1
+                    LOGGER.info(f"Extracted feature from image No. {i + 1}")
+                else:
+                    LOGGER.warnning(f"Didn't extract feature from image No. {i + 1}")
+            except Exception as e:
+                LOGGER.exception(e)
                 LOGGER.error(f"Error with extracting feature from image.")
                 continue
         return feats, names
-    except Exception:
-        traceback.print_stack()
+    except Exception as e:
+        LOGGER.exception(e)
         LOGGER.error(f"Error with extracting feature from image.")
         sys.exit(1)
 
