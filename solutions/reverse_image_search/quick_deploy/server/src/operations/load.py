@@ -31,7 +31,7 @@ def extract_features(img_dir, model):
             LOGGER.info(f"Extracting feature from image No. {i + 1} , {total} images in total")
             try:
                 norm_feat = model.resnet50_extract_feat(img_path)
-                if norm_feat:
+                if norm_feat is not None:
                     LOGGER.info(f"Got image feature from image No. {i + 1}")
                     feats.append(norm_feat)
                     names.append(img_path.encode())
