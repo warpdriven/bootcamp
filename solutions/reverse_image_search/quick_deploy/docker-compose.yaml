@@ -8,9 +8,14 @@ services:
       app_net:
         ipv4_address: 172.16.238.11
     environment:
+      - MYSQL_DATABASE=image_search
       - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_USER=wd_dba_2022
+      - MYSQL_PASSWORD=WD_dba@20220122
     ports:
       - "3306:3306"
+    volumes:
+      - ${DATALAKE_VOLUME_FOLDER}/erp/mysql:/var/lib/mysql
 
   etcd:
     container_name: milvus-etcd
@@ -63,7 +68,8 @@ services:
   webserver:
     container_name: img-search-webserver
 #    image: milvusbootcamp/img-search-server:towhee0.6
-    build: server
+    build: ./server
+    image: img-search-server
     networks:
       app_net:
         ipv4_address: 172.16.238.12
@@ -73,9 +79,9 @@ services:
       MYSQL_PORT: '3306'
       MYSQL_USER: "root"
       MYSQL_PWD: "123456"
-      MYSQL_DB: "mysql"
+      MYSQL_DB: "image_search"
     volumes:
-      - /data_lake/img_server:/data
+      - ${DATALAKE_VOLUME_FOLDER}/img_server:/data
     restart: always
     depends_on:
       - standalone
@@ -91,7 +97,7 @@ services:
       app_net:
         ipv4_address: 172.16.238.13
     environment:
-      API_URL: 'http://127.0.0.1:5100'
+      API_URL: 'http://172.16.238.12:5100'
     ports:
       - "8001:80"
     healthcheck:

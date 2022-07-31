@@ -1,10 +1,11 @@
 import sys
+import time
 import pymysql
 from config import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PWD, MYSQL_DB
 from logs import LOGGER
 
 
-class MySQLHelper():
+class MySQLHelper:
     """
     Say something about the ExampleCalass...
 
@@ -16,18 +17,40 @@ class MySQLHelper():
     def __init__(self):
         LOGGER.info(f"host={MYSQL_HOST}, user={MYSQL_USER}, "
                     f"port={MYSQL_PORT}, password={MYSQL_PWD}, database={MYSQL_DB}")
-        self.conn = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, port=MYSQL_PORT, password=MYSQL_PWD,
-                                    database=MYSQL_DB,
-                                    local_infile=True)
-        self.cursor = self.conn.cursor()
+
+        self.connect_num = 0
+        self.conn = None
+        self.cursor = None
+        self.connect_db()
+
+    def connect_db(self):
+        try:
+            self.conn = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, port=MYSQL_PORT, password=MYSQL_PWD,
+                                        database=MYSQL_DB, local_infile=True)
+            self.cursor = self.conn.cursor()
+            self.conn.ping()
+            LOGGER.info(f'Connected to mysql {MYSQL_DB} in {MYSQL_HOST}')
+        except Exception as ex:
+            self.connect_num += 1
+
+            if self.connect_num < 3:
+                LOGGER.warning(f'Cannot connect to mysql {MYSQL_DB} in {MYSQL_HOST}, '
+                               f'trying {self.connect_num} again after 10s...')
+                time.sleep(10)
+                self.connect_db()
+            else:
+                LOGGER.error(f'Failed to connect to mysql {MYSQL_DB} in {MYSQL_HOST} after 3 retrying.')
 
     def test_connection(self):
         try:
             self.conn.ping()
-        except Exception:
+            LOGGER.info(f'Connected to mysql {MYSQL_DB} in {MYSQL_HOST}')
+        except Exception as ex:
+            LOGGER.warning(f'Cannot connect to mysql {MYSQL_DB} in {MYSQL_HOST}, trying again...')
             self.conn = pymysql.connect(host=MYSQL_HOST, user=MYSQL_USER, port=MYSQL_PORT, password=MYSQL_PWD,
                                         database=MYSQL_DB, local_infile=True)
             self.cursor = self.conn.cursor()
+            LOGGER.info(f'Connected to mysql {MYSQL_DB} in {MYSQL_HOST} after retrying.')
 
     def create_mysql_table(self, table_name):
         # Create mysql table if not exists

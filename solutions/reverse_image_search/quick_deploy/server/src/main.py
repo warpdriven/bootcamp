@@ -1,3 +1,5 @@
+import traceback
+
 import uvicorn
 import os
 from diskcache import Cache
@@ -38,6 +40,7 @@ if not os.path.exists(UPLOAD_PATH):
     os.makedirs(UPLOAD_PATH)
     LOGGER.info(f"mkdir the path:{UPLOAD_PATH}")
 
+
 @app.get('/data')
 def get_img(image_path):
     # Get the image file
@@ -59,20 +62,25 @@ def get_progress():
         LOGGER.error(f"upload image error: {e}")
         return {'status': False, 'msg': e}, 400
 
+
 class Item(BaseModel):
     Table: Optional[str] = None
     File: str
 
+
 @app.post('/img/load')
 async def load_images(item: Item):
     # Insert all the image under the file path to Milvus/MySQL
+    LOGGER.info(f"Calling load_images for item: {item}...")
     try:
         total_num = do_load(item.Table, item.File, MODEL, MILVUS_CLI, MYSQL_CLI)
         LOGGER.info(f"Successfully loaded data, total count: {total_num}")
         return "Successfully loaded data!"
     except Exception as e:
+        traceback.print_exception(e)
         LOGGER.error(e)
         return {'status': False, 'msg': e}, 400
+
 
 @app.post('/img/upload')
 async def upload_images(image: UploadFile = File(None), url: str = None, table_name: str = None):
@@ -96,6 +104,7 @@ async def upload_images(image: UploadFile = File(None), url: str = None, table_n
     except Exception as e:
         LOGGER.error(e)
         return {'status': False, 'msg': e}, 400
+
 
 @app.post('/img/search')
 async def search_images(image: UploadFile = File(...), topk: int = Form(TOP_K), table_name: str = None):
