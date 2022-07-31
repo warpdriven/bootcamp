@@ -38,7 +38,7 @@ def extract_features(img_dir, model):
                     cache['current'] = i + 1
                     LOGGER.info(f"Extracted feature from image No. {i + 1}")
                 else:
-                    LOGGER.warnning(f"Didn't extract feature from image No. {i + 1}")
+                    LOGGER.warning(f"Didn't extract feature from image No. {i + 1}")
             except Exception as e:
                 LOGGER.exception(e)
                 LOGGER.error(f"Error with extracting feature from image.")
