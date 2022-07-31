@@ -18,3 +18,4 @@ towhee==0.7.3
 scipy
 opencv-python
 pyyaml
+google==3.0.0
