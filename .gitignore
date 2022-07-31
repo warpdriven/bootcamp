@@ -109,6 +109,8 @@ venv.bak/
 .DS_Store?
 
 .idea/
-
+solutions/ModelNet40/
+solutions/reverse_image_search/test
+solutions/reverse_image_search/train
 */node_modules
 solutions/text_search_engine/quick_deploy/client/node_modules
