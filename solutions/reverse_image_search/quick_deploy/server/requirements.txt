@@ -11,3 +11,4 @@ python-multipart==0.0.5
 pillow==9.2.0
 aiofiles==0.8.0
 google==3.0.0
+timm==0.6.7
