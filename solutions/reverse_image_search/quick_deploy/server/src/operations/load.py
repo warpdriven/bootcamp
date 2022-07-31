@@ -1,5 +1,7 @@
 import sys
 import os
+import traceback
+
 from diskcache import Cache
 
 sys.path.append("..")
@@ -27,18 +29,21 @@ def extract_features(img_dir, model):
         total = len(img_list)
         cache['total'] = total
         for i, img_path in enumerate(img_list):
+            LOGGER.info(f"Extracting feature from image No. {i + 1} , {total} images in total")
             try:
                 norm_feat = model.resnet50_extract_feat(img_path)
                 feats.append(norm_feat)
                 names.append(img_path.encode())
                 cache['current'] = i + 1
-                print(f"Extracting feature from image No. {i + 1} , {total} images in total")
+                LOGGER.info(f"Extracted feature from image No. {i + 1}")
             except Exception as e:
-                LOGGER.error(f"Error with extracting feature from image {e}")
+                traceback.print_exception(e)
+                LOGGER.error(f"Error with extracting feature from image.")
                 continue
         return feats, names
     except Exception as e:
-        LOGGER.error(f"Error with extracting feature from image {e}")
+        traceback.print_exception(e)
+        LOGGER.error(f"Error with extracting feature from image.")
         sys.exit(1)
 
 

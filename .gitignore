@@ -112,5 +112,9 @@ venv.bak/
 solutions/ModelNet40/
 solutions/reverse_image_search/test
 solutions/reverse_image_search/train
+.*.bin
+
+
+
 */node_modules
 solutions/text_search_engine/quick_deploy/client/node_modules
