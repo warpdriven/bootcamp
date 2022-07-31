@@ -2,7 +2,7 @@ FROM python:3.7-buster
 
 RUN pip3 install --upgrade pip
 RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6  -y
+RUN apt-get install ffmpeg libsm6 libxext6 git-lfs -y
 
 WORKDIR /app/src
 COPY ./requirements.txt /app/
