@@ -10,7 +10,7 @@ import Slider from "@material-ui/core/Slider";
 import { DropzoneArea } from "material-ui-dropzone";
 import SeperatLine from "../components/SeperatLine";
 import { baseColor } from "../utils/color";
-import Logo from "./Logo.svg";
+import Logo from "./Logo.png";
 import { delayRunFunc } from "../utils/Helper";
 
 const Setting = (props: any) => {

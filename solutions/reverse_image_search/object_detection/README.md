@@ -178,7 +178,7 @@ The loading process may take several minutes. The following screenshot shows the
 ## Code structure
 ```bash
 server
-├── Dockerfile
+├── Dockerfile_original
 ├── __init__.py
 ├── nohup.out
 ├── requirements.txt

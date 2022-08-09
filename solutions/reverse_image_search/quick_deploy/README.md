@@ -200,7 +200,7 @@ If you are interested in our code or would like to contribute code, feel free to
 
 ```bash
 server
-├── Dockerfile
+├── Dockerfile_original
 ├── requirements.txt
 └── src
     ├── __init__.py
